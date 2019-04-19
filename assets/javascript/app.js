@@ -6,9 +6,29 @@ function initMap() {
             lat: -34.397,
             lng: 150.644
         },
-        zoom: 6
+        zoom: 15
     });
     infoWindow = new google.maps.InfoWindow;
+    
+    // Draw route
+    var drawingManager = new google.maps.drawing.DrawingManager({
+        drawingMode: google.maps.drawing.OverlayType.MARKER,
+        drawingControl: true,
+        drawingControlOptions: {
+          position: google.maps.ControlPosition.TOP_CENTER,
+          drawingModes: ['marker', 'circle', 'polygon', 'polyline', 'rectangle']
+        },
+        markerOptions: {icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'},
+        circleOptions: {
+          fillColor: '#ffff00',
+          fillOpacity: 1,
+          strokeWeight: 5,
+          clickable: false,
+          editable: true,
+          zIndex: 1
+        }
+      });
+      drawingManager.setMap(map);
 
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
@@ -33,8 +53,8 @@ function initMap() {
                 method: "GET"
             }).then(function (response) {
                 console.log(response)
-                // $(`#movie-view`).text(JSON.stringify(response));
-                // $(`#movie-view`).html(makeMovie(response));
+                $(`#temp`).html((Math.round((response.main.temp) - 273.15) * 9/5 + 32 ));
+                $(`#temp`).append(response.weather[0].description);
 
 
             })
