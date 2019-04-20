@@ -7,16 +7,15 @@
       storageBucket: "run-source-60b00.appspot.com",
       messagingSenderId: "270692521090"
   };
+  
   firebase.initializeApp(config);
   var database = firebase.database();
 
   $(`#register`).click(function () {
       event.preventDefault();
 
-      // var username = $(`#inputUsername`).val().trim();
       var email = $(`#inputEmail`).val().trim();
       var password = $(`#inputPassword`).val().trim();
-      // var inputConfirmPassword = $(`#inputConfirmPassword`).val().trim();
 
       firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
 
@@ -32,5 +31,36 @@
       password = $(`#inputPassword`).val("");
       inputConfirmPassword = $(`#inputConfirmPassword`).val("");
 
+  });
 
+  $(`#signin`).click(function () {
+      event.preventDefault();
+
+      var email = $(`#inputEmail`).val().trim();
+      var password = $(`#inputPassword`).val().trim();
+
+      firebase.auth().signInWithEmailAndPassword(email, password).then(function (action) {
+          console.log("YOU LOGGED IN SUCCESFULL PUSHING YOU TO THE HOME PAGE")
+          window.location.href = 'index.html';
+
+      }).catch(function (error) {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          alert(error);
+          return error;
+
+      });
+
+  })
+
+  $(`#logout`).click(function () {
+
+      firebase.auth().signOut().then(function () {
+          // Sign-out successful.
+          console.log("you've signed out");
+          window.location.href = 'login.html';
+      }).catch(function (error) {
+          // An error happened.
+      });
   });
