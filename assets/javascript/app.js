@@ -60,7 +60,7 @@ function initMap() {
             })
 
             infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
+            infoWindow.setContent('You are here!');
             infoWindow.open(map);
             map.setCenter(pos);
         }, function () {
