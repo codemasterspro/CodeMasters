@@ -7,11 +7,11 @@
       storageBucket: "run-source-60b00.appspot.com",
       messagingSenderId: "270692521090"
   };
-  
+
   firebase.initializeApp(config);
   var database = firebase.database();
 
-  $(`#register`).click(function () {
+  $(`#register`).click(function() {
       event.preventDefault();
 
       var email = $(`#inputEmail`).val().trim();
@@ -33,7 +33,7 @@
 
   });
 
-  $(`#signin`).click(function () {
+  $(`#signin`).click(function() {
       event.preventDefault();
 
       var email = $(`#inputEmail`).val().trim();
@@ -52,7 +52,38 @@
 
       });
 
+      password = $(`#inputPassword`).val("")
+
   })
+
+  $(`#facebook`).click(function() {
+
+    var provider = new firebase.auth.FacebookAuthProvider();
+
+    firebase.auth().signInWithRedirect(provider).then(function(result) {
+        // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+        var token = result.credential.accessToken;
+        // The signed-in user info.
+        var user = result.user;
+        console.log(user);
+        console.log(token);
+        
+      }).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+
+        console.log(errorCode);
+        console.log(errorMessage);
+        // The email of the user's account used.
+        var email = error.email;
+        console.log(email);
+        // The firebase.auth.AuthCredential type that was used.
+        var credential = error.credential;
+        console.log(credential);
+        // ...
+      });
+  });
 
   $(`#logout`).click(function () {
 

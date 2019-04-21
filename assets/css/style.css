@@ -1,13 +1,29 @@
 /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
-       #map {
-        height: 100%;
-      }
-  
-      /* Optional: Makes the sample page fill the window. */
-      html,
-      body {
-        height: 90%;
-        margin: 0;
-        padding: 0;
-      }
+#map {
+  height: 100%;
+}
+
+/* Optional: Makes the sample page fill the window. */
+html,
+body {
+  height: 95%;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-color: black;
+}
+
+#name {
+  margin-left: 10px;
+}
+
+#weather {
+  color: white;
+}
+
+.d-inline-block {
+  margin-left: 5dpx;
+}
