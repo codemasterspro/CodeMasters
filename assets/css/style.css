@@ -10,6 +10,7 @@ body {
   height: 95%;
   margin: 0;
   padding: 0;
+  background-color: #000000;
 }
 
 .navbar {
@@ -26,4 +27,27 @@ body {
 
 .d-inline-block {
   margin-left: 5dpx;
+}
+
+div#widget {
+  margin-top: 20px;
+  margin-bottom: 25px;
+  background-color: #00afff;
+  border-style: solid;
+  border-radius: 25px;
+}
+
+#logout{
+  margin-right: 0px;
+  border-radius: 25px;
+  border-style: solid;
+  background-color: #00afff;
+  border-color: #00afff;
+  margin-bottom: 25px;
+  text-align: center;
+  
+}
+
+div.log-btn{
+  text-align: center;
 }

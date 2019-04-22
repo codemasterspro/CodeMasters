@@ -55,8 +55,8 @@ function initMap() {
                 //$(`#icon`).html(response.weather[0].icon);
 
                 $(`#weather`).html(imageConverter(response));
-
             })
+            postscribe("#widget", `<script type='text/javascript' src='https://darksky.net/widget/graph-bar/${latitude},${longitude}/us12/en.js?width=100%&height=300&title=Full Forecast&textColor=333333&bgColor=transparent&transparency=true&skyColor=undefined&fontFamily=Default&customFont=&units=us&timeColor=333333&tempColor=333333&currentDetailsOption=true'></script>`)
 
             infoWindow.setPosition(pos);
             infoWindow.setContent('You are here!');

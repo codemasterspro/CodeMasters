@@ -1,36 +1,75 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Geolocation</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/postscribe/2.0.8/postscribe.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"/>
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.7/css/mdb.min.css" rel="stylesheet"/>
+  </head>
 
-<head>
-  <title>Geolocation</title>
-  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <body>
+    <nav class="navbar navbar-light">
+      <a class="navbar-brand" href="#">
+        <img
+          src="./assets/images/running.png"
+          width="50"
+          height="50"
+          class="d-inline-block"
+          alt=""
+        />
+        <span id="name" class="text-white font-weight-light">Run Source</span>
+      </a>
+      <span id="weather"></span>
+      <!-- <button id="logout">Logout</button> -->
+    </nav>
 
-  <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
-</head>
+    <div id="map"></div>
+    <div id="widget"></div>
+    <div class="log-btn">
+      <button id="logout"><strong>Logout</strong></button>
+    </div>
 
-<body>
-  <nav class="navbar navbar-light">
-    <a class="navbar-brand" href="#">
-      <img src="./assets/images/running.png" width="50" height="50" class="d-inline-block" alt="">
-      <span id="name" class="text-white font-weight-light">Run Source</span>
-    </a>
-    <span id="weather"></span>
-    <!-- <button id="logout">Logout</button> -->
-  </nav>
+    <!-- Footer -->
+    <footer class="page-footer font-large special-color-dark pt-4">
+      <div class="container">
+        <ul class="list-unstyled list-inline text-center">
+          <li class="list-inline-item">
+            <a class="btn-floating btn-fb mx-1" href="https://github.com/codemasterspro/CodeMasters" target="_blank">
+              <i class="fab fa-github btn-lg"> </i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">
+        © 2019 Copyright:
+        <p>
+          Code Masters</p
+        >
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
 
-  <div id="map"></div>
-  <button id="logout">Logout</button>
-
-  <script src="./assets/javascript/app.js"></script>
-  <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBw9NbQC4DhMXhXFxEZSmWX1U4bRXCc75A&callback=initMap&libraries=drawing">
-  </script>
-  <script src="./assets/javascript/registration.js"></script>
-</body>
-
+    <script src="./assets/javascript/app.js"></script>
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBw9NbQC4DhMXhXFxEZSmWX1U4bRXCc75A&callback=initMap&libraries=drawing"
+    ></script>
+    <script src="./assets/javascript/registration.js"></script>
+  </body>
 </html>
