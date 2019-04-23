@@ -3,34 +3,21 @@ var map, infoWindow;
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: {
-            lat: -34.397,
-            lng: 150.644
+            lat: 30.2849,
+            lng: -97.7341
         },
         zoom: 15
     });
     infoWindow = new google.maps.InfoWindow;
 
-    // Draw route
-    var drawingManager = new google.maps.drawing.DrawingManager({
-        drawingMode: google.maps.drawing.OverlayType.MARKER,
-        drawingControl: true,
-        drawingControlOptions: {
-            position: google.maps.ControlPosition.TOP_CENTER,
-            drawingModes: ['marker', 'circle', 'polygon', 'polyline', 'rectangle']
-        },
-        markerOptions: {
-            icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
-        },
-        circleOptions: {
-            fillColor: '#ffff00',
-            fillOpacity: 1,
-            strokeWeight: 5,
-            clickable: false,
-            editable: true,
-            zIndex: 1
+    function myMap() {
+
+        google.maps.event.addListener(map, 'click', function(event) {
+        alert(event.latLng.lat() + ", " + event.latLng.lng());
+        });
+        
         }
-    });
-    drawingManager.setMap(map);
+myMap();
 
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
@@ -93,3 +80,29 @@ function imageConverter(response) {
         </div>
     `
 }
+
+
+
+
+
+    // // Drawing Tools
+    // var drawingManager = new google.maps.drawing.DrawingManager({
+    //     drawingMode: google.maps.drawing.OverlayType.MARKER,
+    //     drawingControl: true,
+    //     drawingControlOptions: {
+    //         position: google.maps.ControlPosition.TOP_CENTER,
+    //         drawingModes: ['marker', 'circle', 'polygon', 'polyline', 'rectangle']
+    //     },
+    //     markerOptions: {
+    //         icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+    //     },
+    //     circleOptions: {
+    //         fillColor: '#ffff00',
+    //         fillOpacity: 1,
+    //         strokeWeight: 5,
+    //         clickable: false,
+    //         editable: true,
+    //         zIndex: 1
+    //     }
+    // });
+    // drawingManager.setMap(map);
