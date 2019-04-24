@@ -1,75 +1,75 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Geolocation</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    <meta charset="utf-8" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/postscribe/2.0.8/postscribe.min.js"></script>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./assets/css/registration.css">
+
     <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"/>
-    <!-- Material Design Bootstrap -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.7/css/mdb.min.css" rel="stylesheet"/>
-  </head>
 
-  <body>
-    <nav class="navbar navbar-light">
-      <a class="navbar-brand" href="#">
-        <img
-          src="./assets/images/running.png"
-          width="50"
-          height="50"
-          class="d-inline-block"
-          alt=""
-        />
-        <span id="name" class="text-white font-weight-light">Run Source</span>
-      </a>
-      <span id="weather"></span>
-      <!-- <button id="logout">Logout</button> -->
-    </nav>
+    <title>Hello, world!</title>
+</head>
 
-    <div id="map"></div>
-    <div id="widget"></div>
-    <div class="log-btn">
-      <button id="logout"><strong>Logout</strong></button>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-xl-9 mx-auto">
+                <div class="card card-signin flex-row my-5">
+                    <div class="card-img-left d-none d-md-flex">
+                        <!-- Background image for card set in CSS! -->
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Register</h5>
+                        <form class="form-signin">
+
+                            <div class="form-label-group">
+                                <input type="email" id="inputEmail" class="form-control" placeholder="Email address"
+                                    >
+                                <label for="inputEmail">Email address</label>
+                            </div>
+
+                            <div class="form-label-group">
+                                <input type="password" id="inputPassword" class="form-control" placeholder="Password"
+                                    >
+                                <label for="inputPassword">Password</label>
+                            </div>
+
+                            <div class="form-label-group">
+                                <input type="password" id="inputConfirmPassword" class="form-control"
+                                    placeholder="Password">
+                                <label for="inputConfirmPassword">Confirm password</label>
+                            </div>
+
+                            <button id="register" class="btn btn-lg btn-primary btn-block text-uppercase"
+                                type="submit">Register</button>
+                            <a class="d-block text-center mt-2 small" href="login.html">Sign In</a>
+                            <hr class="my-4">
+                            <button id="facebook" class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i
+                                    class="fab fa-facebook-f mr-2"></i> Sign up with Facebook</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="page-footer font-large special-color-dark pt-4">
-      <div class="container">
-        <ul class="list-unstyled list-inline text-center">
-          <li class="list-inline-item">
-            <a class="btn-floating btn-fb mx-1" href="https://github.com/codemasterspro/CodeMasters" target="_blank">
-              <i class="fab fa-github btn-lg"> </i>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <!-- Copyright -->
-      <div class="footer-copyright text-center py-3">
-        © 2019 Copyright:
-        <p>
-          Code Masters</p
-        >
-      </div>
-      <!-- Copyright -->
-    </footer>
-    <!-- Footer -->
-
-    <script src="./assets/javascript/app.js"></script>
-    <script
-      async
-      defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBw9NbQC4DhMXhXFxEZSmWX1U4bRXCc75A&callback=initMap&libraries=drawing"
-    ></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
     <script src="./assets/javascript/registration.js"></script>
-  </body>
+
+    </script>
+
+</body>
+
 </html>
