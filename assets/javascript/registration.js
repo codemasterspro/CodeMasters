@@ -41,7 +41,7 @@
 
       firebase.auth().signInWithEmailAndPassword(email, password).then(function (action) {
           console.log("YOU LOGGED IN SUCCESFULL PUSHING YOU TO THE HOME PAGE")
-          window.location.href = 'index.html';
+          window.location.href = 'map.html';
 
       }).catch(function (error) {
           // Handle Errors here.
