@@ -1,5 +1,6 @@
 var map, infoWindow;
 
+
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: {
@@ -12,8 +13,11 @@ function initMap() {
 
     function myMap() {
 
+        var coord = [];
+
         google.maps.event.addListener(map, 'click', function(event) {
-        alert(event.latLng.lat() + ", " + event.latLng.lng());
+        coord.push(event.latLng.lat() + ", " + event.latLng.lng());
+        console.log(coord);
         });
         
         }
@@ -36,7 +40,7 @@ myMap();
                 url: queryURL,
                 method: "GET"
             }).then(function (response) {
-                console.log(response)
+                
                 //$(`#weather`).html((Math.round((response.main.temp) - 273.15) * 9 / 5 + 32));
                 // $(`#weather`).append(response.weather[0].description);
                 //$(`#icon`).html(response.weather[0].icon);
