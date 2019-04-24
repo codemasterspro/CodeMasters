@@ -10,7 +10,7 @@ body {
   height: 95%;
   margin: 0;
   padding: 0;
-  background-color: #000000;
+  background-color: #1e282d;
 }
 
 .navbar {
@@ -34,7 +34,6 @@ div#widget {
   margin-bottom: 25px;
   background-color: #00afff;
   border-style: solid;
-  border-radius: 25px;
 }
 
 #logout{
