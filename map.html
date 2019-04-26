@@ -1,42 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
+      <title>Free Runner Home</title>
+      <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+      <meta charset="utf-8" />
+      
+      <!-- Global Site Tag (gtag.js) - Google Analytics -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+      <script src="assets/javascript/analytics.js"></script>
 
-    <!-- Global Site Tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-139030456-1');
-</script>
-
-    <title>Geolocation</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    <meta charset="utf-8" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/postscribe/2.0.8/postscribe.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    />
-    <!-- Material Design Bootstrap -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.7/css/mdb.min.css"
-      rel="stylesheet"
-    />
+      <!-- BootStrap link -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+    
+      <!-- CSS link -->
+      <link rel="stylesheet" href="./assets/css/style.css" />
+    
+      <!-- jQueary Library -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+      <!-- Library for weather widget -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/postscribe/2.0.8/postscribe.min.js"></script>
+    
+      <!-- Firebase Link -->
+      <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
+    
+      <!-- Font Awesome -->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"/>
+    
+      <!-- Material Design Bootstrap -->
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.7/css/mdb.min.css" rel="stylesheet"/>
   </head>
 
+  <!-- Navbar Section -->
   <body>
     <nav class="navbar navbar-light">
       <a class="navbar-brand" href="#">
@@ -51,10 +46,12 @@
       </a>
       <span id="miles"></span>
       <span id="weather"></span>
-      <!-- <button id="logout">Logout</button> -->
     </nav>
 
+    <!-- Map API -->
     <div id="map"></div>
+
+    <!-- Weather Widget -->
     <div id="widget"></div>
 
     <!-- Footer -->
@@ -75,23 +72,21 @@
           </li>
         </ul>
       </div>
-      <!-- Copyright -->
       <div class="footer-copyright text-center py-3">
         © 2019 Copyright:
         <p>
           Code Masters
         </p>
       </div>
-      <!-- Copyright -->
     </footer>
-    <!-- Footer -->
-
+    
+    <!-- Application JavaScript Link -->
     <script src="./assets/javascript/app.js"></script>
-    <script
-      async
-      defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBw9NbQC4DhMXhXFxEZSmWX1U4bRXCc75A&callback=initMap&libraries=drawing,geometry"
-    ></script>
+
+    <!-- Google API -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBw9NbQC4DhMXhXFxEZSmWX1U4bRXCc75A&callback=initMap&libraries=drawing,geometry"></script>
+    
+    <!-- Regiteration & Authentication -->
     <script src="./assets/javascript/registration.js"></script>
   </body>
 </html>
