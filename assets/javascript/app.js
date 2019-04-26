@@ -36,6 +36,16 @@ function initMap() {
                 lat: marker.position.lat()
             })
             console.log(coord);
+
+            // var p1 = new google.maps.LatLng(coord[0]);
+            // var p1 = new google.maps.LatLng(coord[1]);
+
+            // alert(calcDistance(p1, p2));
+
+            // function calcDistance(p1, p2) {
+            //     return (google.maps.geometry.spherical.computeDistanceBetween(p1, p2) / 1000).toFixed(2);
+        //     }
+        // }
         });
 
         // polyline = new google.maps.Polyline({
@@ -47,8 +57,7 @@ function initMap() {
         // });
 
     }
-
-    myMap();
+myMap();
 
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
@@ -67,7 +76,7 @@ function initMap() {
                 url: queryURL,
                 method: "GET"
             }).then(function (response) {
-
+                
                 //$(`#weather`).html((Math.round((response.main.temp) - 273.15) * 9 / 5 + 32));
                 // $(`#weather`).append(response.weather[0].description);
                 //$(`#icon`).html(response.weather[0].icon);
@@ -112,30 +121,28 @@ function imageConverter(response) {
     `
 }
 
-$
 
 
 
 
-
-// // Drawing Tools
-// var drawingManager = new google.maps.drawing.DrawingManager({
-//     drawingMode: google.maps.drawing.OverlayType.MARKER,
-//     drawingControl: true,
-//     drawingControlOptions: {
-//         position: google.maps.ControlPosition.TOP_CENTER,
-//         drawingModes: ['marker', 'circle', 'polygon', 'polyline', 'rectangle']
-//     },
-//     markerOptions: {
-//         icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
-//     },
-//     circleOptions: {
-//         fillColor: '#ffff00',
-//         fillOpacity: 1,
-//         strokeWeight: 5,
-//         clickable: false,
-//         editable: true,
-//         zIndex: 1
-//     }
-// });
-// drawingManager.setMap(map);
+    // Drawing Tools
+    // var drawingManager = new google.maps.drawing.DrawingManager({
+    //     drawingMode: google.maps.drawing.OverlayType.MARKER,
+    //     drawingControl: true,
+    //     drawingControlOptions: {
+    //         position: google.maps.ControlPosition.TOP_CENTER,
+    //         drawingModes: ['marker', 'circle', 'polygon', 'polyline', 'rectangle']
+    //     },
+    //     markerOptions: {
+    //         icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+    //     },
+    //     circleOptions: {
+    //         fillColor: '#ffff00',
+    //         fillOpacity: 1,
+    //         strokeWeight: 5,
+    //         clickable: false,
+    //         editable: true,
+    //         zIndex: 1
+    //     }
+    // });
+    // drawingManager.setMap(map);
