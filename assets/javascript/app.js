@@ -48,15 +48,17 @@ function initMap() {
 
             console.log(coord);
 
-            // var p1 = new google.maps.LatLng(coord[0]);
-            // var p1 = new google.maps.LatLng(coord[1]);
+            var p1 = new google.maps.LatLng(coord[0]);
+            var p2 = new google.maps.LatLng(coord[1]);
 
-            // alert(calcDistance(p1, p2));
+            console.log(calcDistance(p1, p2));
 
-            // function calcDistance(p1, p2) {
-            //     return (google.maps.geometry.spherical.computeDistanceBetween(p1, p2) / 1000).toFixed(2);
-        //     }
-        // }
+            function calcDistance(p1, p2) {
+                return (google.maps.geometry.spherical.computeDistanceBetween(p1, p2) / 1000).toFixed(2);
+            }
+
+            var lengthInMeters = google.maps.geometry.spherical.computeLength(flightPath.getPath());
+    console.log(lengthInMeters);
         });
 
         // polyline = new google.maps.Polyline({
