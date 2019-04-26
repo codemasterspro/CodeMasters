@@ -1,4 +1,7 @@
-  // Initialize Firebase
+$(document).ready(function(){
+
+
+// Initialize Firebase
   var config = {
       apiKey: "AIzaSyAoTRv2CX3wDHmmS9JbO11uO_28ZQokOyM",
       authDomain: "run-source-60b00.firebaseapp.com",
@@ -95,3 +98,4 @@
           // An error happened.
       });
   });
+});
