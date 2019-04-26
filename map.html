@@ -4,6 +4,9 @@
       <title>Free Runner Home</title>
       <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
       <meta charset="utf-8" />
+
+      <!-- jQueary Library -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       
       <!-- Global Site Tag (gtag.js) - Google Analytics -->
       <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
@@ -14,9 +17,6 @@
     
       <!-- CSS link -->
       <link rel="stylesheet" href="./assets/css/style.css" />
-    
-      <!-- jQueary Library -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
       <!-- Library for weather widget -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/postscribe/2.0.8/postscribe.min.js"></script>
@@ -44,7 +44,8 @@
         />
         <span id="name" class="text-white font-weight-light">Run Source</span>
       </a>
-      <span id="miles"></span>
+      <button id="reset" type="reset">Reset</button>
+      <span class="milesToGo">Miles To Go: <span id="miles"></span></span>
       <span id="weather"></span>
     </nav>
 

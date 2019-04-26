@@ -47,10 +47,27 @@ div#widget {
   
 }
 
+#reset{
+  border-radius: 25px;
+  border-style: solid;
+  background-color: #00afff;
+  border-color: #00afff;
+}
+
 div.log-btn{
   text-align: center;
 }
 
 #miles {
   color: white;
+}
+
+.milesToGo {
+  color: white;
+}
+
+@media only screen and (max-width: 420px) {
+  .navbar{
+    align-content: space-between;
+  }
 }
