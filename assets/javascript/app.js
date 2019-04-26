@@ -26,13 +26,14 @@ function initMap() {
                 position: google.maps.ControlPosition.TOP_CENTER,
             },
             markerOptions: {
+                animation: google.maps.Animation.DROP,
                 icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
             }
         });
         drawingManager.setMap(map);
 
         google.maps.event.addListener(drawingManager, 'markercomplete', function (marker) {
-            console.log(marker)
+
             window.marker = marker;
             coord.push({
                 lng: marker.position.lng(),
@@ -45,27 +46,19 @@ function initMap() {
                 strokeColor: '#FF0000',
                 strokeOpacity: 1.0,
                 strokeWeight: 2
-              });
-      
-              flightPath.setMap(map);
+            });
 
-            console.log(coord);
-
-            var p1 = new google.maps.LatLng(coord[0]);
-            var p2 = new google.maps.LatLng(coord[1]);
-
-            console.log(calcDistance(p1, p2));
-
-            function calcDistance(p1, p2) {
-                return (google.maps.geometry.spherical.computeDistanceBetween(p1, p2) / 1000).toFixed(2);
-            }
+            flightPath.setMap(map);
 
             var lengthInMeters = google.maps.geometry.spherical.computeLength(flightPath.getPath());
-    console.log(lengthInMeters);
+            var convertedToMiles = ((lengthInMeters) / 1609.344);
+
+            $(`#miles`).html(Math.round(convertedToMiles * 100) / 100 + " miles");
+
         });
 
     }
-myMap();
+    myMap();
 
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
@@ -84,7 +77,7 @@ myMap();
                 url: queryURL,
                 method: "GET"
             }).then(function (response) {
-    
+
                 $(`#weather`).html(imageConverter(response));
             })
             postscribe("#widget", `<script type='text/javascript' src='https://darksky.net/widget/graph-bar/${latitude},${longitude}/us12/en.js?width=100%&height=300&title=Full Forecast&textColor=333333&bgColor=transparent&transparency=true&skyColor=undefined&fontFamily=Default&customFont=&units=us&timeColor=333333&tempColor=333333&currentDetailsOption=true'></script>`)
@@ -124,5 +117,3 @@ function imageConverter(response) {
         </div>
     `
 }
-
-});
