@@ -23,13 +23,14 @@ function initMap() {
                 // drawingModes: ['marker', 'circle', 'polygon', 'polyline', 'rectangle']
             },
             markerOptions: {
+                animation: google.maps.Animation.DROP,
                 icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
             }
         });
         drawingManager.setMap(map);
 
         google.maps.event.addListener(drawingManager, 'markercomplete', function (marker) {
-            console.log(marker)
+
             window.marker = marker;
             coord.push({
                 lng: marker.position.lng(),
@@ -42,35 +43,19 @@ function initMap() {
                 strokeColor: '#FF0000',
                 strokeOpacity: 1.0,
                 strokeWeight: 2
-              });
-      
-              flightPath.setMap(map);
+            });
 
-            console.log(coord);
-
-            var p1 = new google.maps.LatLng(coord[0]);
-            var p2 = new google.maps.LatLng(coord[1]);
-
-            console.log(calcDistance(p1, p2));
-
-            function calcDistance(p1, p2) {
-                return (google.maps.geometry.spherical.computeDistanceBetween(p1, p2) / 1000).toFixed(2);
-            }
+            flightPath.setMap(map);
 
             var lengthInMeters = google.maps.geometry.spherical.computeLength(flightPath.getPath());
-    console.log(lengthInMeters);
+            var convertedToMiles = ((lengthInMeters) / 1609.344);
+
+            $(`#miles`).html(Math.round(convertedToMiles * 100) / 100 + " miles");
+
         });
 
-        // polyline = new google.maps.Polyline({
-        //     map: map,
-        //     path: coord,
-        //     strokeColor: "#FF0000",
-        //     strokeOpacity: 1.0,
-        //     strokeWeight: 2
-        // });
-
     }
-myMap();
+    myMap();
 
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
@@ -89,7 +74,7 @@ myMap();
                 url: queryURL,
                 method: "GET"
             }).then(function (response) {
-                
+
                 //$(`#weather`).html((Math.round((response.main.temp) - 273.15) * 9 / 5 + 32));
                 // $(`#weather`).append(response.weather[0].description);
                 //$(`#icon`).html(response.weather[0].icon);
