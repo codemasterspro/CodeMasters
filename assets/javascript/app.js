@@ -1,3 +1,7 @@
+$(document).ready(function(){
+
+
+
 var map, infoWindow;
 
 
@@ -20,7 +24,6 @@ function initMap() {
             drawingControl: false,
             drawingControlOptions: {
                 position: google.maps.ControlPosition.TOP_CENTER,
-                // drawingModes: ['marker', 'circle', 'polygon', 'polyline', 'rectangle']
             },
             markerOptions: {
                 icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
@@ -61,14 +64,6 @@ function initMap() {
     console.log(lengthInMeters);
         });
 
-        // polyline = new google.maps.Polyline({
-        //     map: map,
-        //     path: coord,
-        //     strokeColor: "#FF0000",
-        //     strokeOpacity: 1.0,
-        //     strokeWeight: 2
-        // });
-
     }
 myMap();
 
@@ -89,11 +84,7 @@ myMap();
                 url: queryURL,
                 method: "GET"
             }).then(function (response) {
-                
-                //$(`#weather`).html((Math.round((response.main.temp) - 273.15) * 9 / 5 + 32));
-                // $(`#weather`).append(response.weather[0].description);
-                //$(`#icon`).html(response.weather[0].icon);
-
+    
                 $(`#weather`).html(imageConverter(response));
             })
             postscribe("#widget", `<script type='text/javascript' src='https://darksky.net/widget/graph-bar/${latitude},${longitude}/us12/en.js?width=100%&height=300&title=Full Forecast&textColor=333333&bgColor=transparent&transparency=true&skyColor=undefined&fontFamily=Default&customFont=&units=us&timeColor=333333&tempColor=333333&currentDetailsOption=true'></script>`)
@@ -134,25 +125,4 @@ function imageConverter(response) {
     `
 }
 
-
-// // Drawing Tools
-// var drawingManager = new google.maps.drawing.DrawingManager({
-//     drawingMode: google.maps.drawing.OverlayType.MARKER,
-//     drawingControl: true,
-//     drawingControlOptions: {
-//         position: google.maps.ControlPosition.TOP_CENTER,
-//         drawingModes: ['marker', 'circle', 'polygon', 'polyline', 'rectangle']
-//     },
-//     markerOptions: {
-//         icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
-//     },
-//     circleOptions: {
-//         fillColor: '#ffff00',
-//         fillOpacity: 1,
-//         strokeWeight: 5,
-//         clickable: false,
-//         editable: true,
-//         zIndex: 1
-//     }
-// });
-// drawingManager.setMap(map);
+});
