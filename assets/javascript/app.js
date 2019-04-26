@@ -47,6 +47,16 @@ function initMap() {
               flightPath.setMap(map);
 
             console.log(coord);
+
+            // var p1 = new google.maps.LatLng(coord[0]);
+            // var p1 = new google.maps.LatLng(coord[1]);
+
+            // alert(calcDistance(p1, p2));
+
+            // function calcDistance(p1, p2) {
+            //     return (google.maps.geometry.spherical.computeDistanceBetween(p1, p2) / 1000).toFixed(2);
+        //     }
+        // }
         });
 
         // polyline = new google.maps.Polyline({
@@ -58,8 +68,7 @@ function initMap() {
         // });
 
     }
-
-    myMap();
+myMap();
 
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
@@ -78,7 +87,7 @@ function initMap() {
                 url: queryURL,
                 method: "GET"
             }).then(function (response) {
-
+                
                 //$(`#weather`).html((Math.round((response.main.temp) - 273.15) * 9 / 5 + 32));
                 // $(`#weather`).append(response.weather[0].description);
                 //$(`#icon`).html(response.weather[0].icon);
@@ -122,8 +131,6 @@ function imageConverter(response) {
         </div>
     `
 }
-
-
 
 
 // // Drawing Tools
